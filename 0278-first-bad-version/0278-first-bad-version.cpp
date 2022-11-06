@@ -4,19 +4,15 @@
 class Solution {
 public:
     int firstBadVersion(int n) {
-        long long l = 0 , r = n;
-        long long res = 1e12;
+        int l = 0 , r = n;
         while(l <= r)
         {
-            long long mid = (l+r) >> 1;
+            int mid = l + (r - l) / 2;
             if (isBadVersion(mid))
-            {
-                res = min(res, mid);
                 r = mid - 1;
-            }
             else 
                 l = mid + 1;
         }
-        return res;
+        return l;
     }
 };
