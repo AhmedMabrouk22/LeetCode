@@ -9,14 +9,10 @@ public:
             mp[temp].push_back(i);
         }
         
-        vector<vector<string>> res(mp.size());
-        int x = 0;
+        vector<vector<string>>res;
         for(auto i : mp)
-        {
-            for(auto j : i.second)
-                res[x].push_back(j);
-            ++x;
-        }
+            res.push_back(i.second);
+        
         
         return res;
     }
